@@ -1,0 +1,4 @@
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-ENT\bin\Debug\2015137254-ENT.dll
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-ENT\bin\Debug\2015137254-ENT.pdb
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-ENT\obj\Debug\2015137254-ENT.dll
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-ENT\obj\Debug\2015137254-ENT.pdb

@@ -1,0 +1,28 @@
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\bin\Debug\2015137254-PER.dll.config
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\bin\Debug\2015137254-PER.dll
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\bin\Debug\2015137254-PER.pdb
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\bin\Debug\2015137254-ENT.dll
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\bin\Debug\EntityFramework.dll
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\bin\Debug\2015137254-ENT.pdb
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\bin\Debug\EntityFramework.xml
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\obj\Debug\2015137254-PER.csprojResolveAssemblyReference.cache
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\obj\Debug\2015137254-PER.dll
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\obj\Debug\2015137254-PER.pdb
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\obj\Debug\_2015137254_PER.Migrations.InitialModel.resources
+c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-PER\obj\Debug\2015137254-PER.csproj.GenerateResource.Cache
+F:\2015137254-SLN\2015137254-PER\bin\Debug\2015137254-PER.dll.config
+F:\2015137254-SLN\2015137254-PER\bin\Debug\2015137254-PER.dll
+F:\2015137254-SLN\2015137254-PER\bin\Debug\2015137254-PER.pdb
+F:\2015137254-SLN\2015137254-PER\bin\Debug\2015137254-ENT.dll
+F:\2015137254-SLN\2015137254-PER\bin\Debug\EntityFramework.dll
+F:\2015137254-SLN\2015137254-PER\bin\Debug\EntityFramework.SqlServer.dll
+F:\2015137254-SLN\2015137254-PER\bin\Debug\2015137254-ENT.pdb
+F:\2015137254-SLN\2015137254-PER\bin\Debug\EntityFramework.xml
+F:\2015137254-SLN\2015137254-PER\bin\Debug\EntityFramework.SqlServer.xml
+F:\2015137254-SLN\2015137254-PER\obj\Debug\2015137254-PER.csprojResolveAssemblyReference.cache
+F:\2015137254-SLN\2015137254-PER\obj\Debug\_2015137254_PER.Migrations.InitialModel.resources
+F:\2015137254-SLN\2015137254-PER\obj\Debug\2015137254-PER.csproj.GenerateResource.Cache
+F:\2015137254-SLN\2015137254-PER\obj\Debug\2015137254-PER.dll
+F:\2015137254-SLN\2015137254-PER\obj\Debug\2015137254-PER.pdb
