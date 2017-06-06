@@ -10,16 +10,8 @@ namespace _2015137254_PER.Repository
 {
     public class EquipoCelularRepository : Repository<EquipoCelular>, IEquipoCelularRepository
     {
-        private readonly _2015137254DbContext _Context;
-
-        private EquipoCelularRepository()
-        {
-
-        }
-
-        public EquipoCelularRepository(_2015137254DbContext context)
-        {
-            _Context = context;
+        public EquipoCelularRepository(_2015137254DbContext context) : base(context)
+		{
         }
     }
 }

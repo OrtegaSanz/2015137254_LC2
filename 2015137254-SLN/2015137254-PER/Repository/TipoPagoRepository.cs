@@ -10,16 +10,8 @@ namespace _2015137254_PER.Repository
 {
     public class TipoPagoRepository : Repository<TipoPago>, ITipoPagoRepository
     {
-        private readonly _2015137254DbContext _Context;
-
-        private TipoPagoRepository()
-        {
-
-        }
-
-        public TipoPagoRepository(_2015137254DbContext context)
-        {
-            _Context = context;
+        public TipoPagoRepository(_2015137254DbContext context) : base(context)
+		{
         }
     }
 }

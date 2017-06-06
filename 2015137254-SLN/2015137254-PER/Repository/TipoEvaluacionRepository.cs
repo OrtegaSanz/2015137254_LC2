@@ -10,16 +10,8 @@ namespace _2015137254_PER.Repository
 {
     public class TipoEvaluacionRepository : Repository<TipoEvaluacion>, ITipoEvaluacionRepository
     {
-        private readonly _2015137254DbContext _Context;
-
-        private TipoEvaluacionRepository()
-        {
-
-        }
-
-        public TipoEvaluacionRepository(_2015137254DbContext context)
-        {
-            _Context = context;
+        public TipoEvaluacionRepository(_2015137254DbContext context) : base(context)
+		{
         }
     }
 }

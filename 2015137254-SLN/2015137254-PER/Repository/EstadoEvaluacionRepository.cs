@@ -10,16 +10,8 @@ namespace _2015137254_PER.Repository
 {
     public class EstadoEvaluacionRepository : Repository<EstadoEvaluacion>, IEstadoEvaluacionRepository
     {
-        private readonly _2015137254DbContext _Context;
-
-        private EstadoEvaluacionRepository()
-        {
-
-        }
-
-        public EstadoEvaluacionRepository(_2015137254DbContext context)
-        {
-            _Context = context;
+        public EstadoEvaluacionRepository(_2015137254DbContext context) : base(context)
+		{
         }
     }
 }

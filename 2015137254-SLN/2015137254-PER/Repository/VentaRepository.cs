@@ -10,16 +10,8 @@ namespace _2015137254_PER.Repository
 {
     public class VentaRepository : Repository<Venta>, IVentaRepository
     {
-        private readonly _2015137254DbContext _Context;
-
-        private VentaRepository()
-        {
-
-        }
-
-        public VentaRepository(_2015137254DbContext context)
-        {
-            _Context = context;
+        public VentaRepository(_2015137254DbContext context) : base(context)
+		{
         }
     }
 }

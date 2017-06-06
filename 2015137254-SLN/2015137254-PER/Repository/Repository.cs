@@ -5,49 +5,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
+using System.Data.Entity;
 
 namespace _2015137254_PER.Repository
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected readonly DbContext _Context;
-        public Repository(_2015137254DbContext )
+        public Repository(_2015137254DbContext context)
         {
-                
+            _Context = context;
         }
         void IRepository<TEntity>.Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            _Context.Set<TEntity>().Add(entity);
         }
 
         void IRepository<TEntity>.AddRange(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            _Context.Set<TEntity>().AddRange(entities);
         }
 
         void IRepository<TEntity>.Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            _Context.Set<TEntity>().Remove(entity);
         }
 
         void IRepository<TEntity>.DeleteRange(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            _Context.Set<TEntity>().RemoveRange(entities);
         }
 
         IEnumerable<TEntity> IRepository<TEntity>.Find(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return _Context.Set<TEntity>().Where(predicate);
         }
 
         TEntity IRepository<TEntity>.Get(int Id)
         {
-            throw new NotImplementedException();
+            return _Context.Set<TEntity>().Find(Id);
         }
 
         IEnumerable<TEntity> IRepository<TEntity>.GetAll()
         {
-            throw new NotImplementedException();
+            return _Context.Set<TEntity>().ToList();
         }
 
         void IRepository<TEntity>.Update(TEntity entity)

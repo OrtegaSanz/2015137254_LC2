@@ -10,16 +10,8 @@ namespace _2015137254_PER.Repository
 {
     public class TipoPlanRepository : Repository<TipoPlan>, ITipoPlanRepository
     {
-        private readonly _2015137254DbContext _Context;
-
-        private TipoPlanRepository()
-        {
-
-        }
-
-        public TipoPlanRepository(_2015137254DbContext context)
-        {
-            _Context = context;
+        public TipoPlanRepository(_2015137254DbContext context) : base(context)
+		{
         }
     }
 }

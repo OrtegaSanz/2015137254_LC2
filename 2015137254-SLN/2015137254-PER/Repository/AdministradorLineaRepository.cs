@@ -10,14 +10,8 @@ namespace _2015137254_PER.Repository
 {
     public class AdministradorLineaRepository : Repository<AdministradorLinea>, IAdministradorLineaRepository
     {
-        private readonly _2015137254DbContext _Context;
-        private AdministradorLineaRepository()
-        {
-
-        }
-        public AdministradorLineaRepository(_2015137254DbContext context)
-        {
-            _Context = context;
+        public AdministradorLineaRepository(_2015137254DbContext context) : base(context)
+		{
         }
     }
 }
