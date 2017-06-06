@@ -74,6 +74,30 @@
       <DependentUpon>201705130627262_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repository\AdministradorEquipoRepository.cs" />
+    <Compile Include="Repository\AdministradorLineaRepository.cs" />
+    <Compile Include="Repository\CentroAtencionRepository.cs" />
+    <Compile Include="Repository\ClienteRepository.cs" />
+    <Compile Include="Repository\ContratoRepository.cs" />
+    <Compile Include="Repository\DepartamentoRepository.cs" />
+    <Compile Include="Repository\DireccionRepository.cs" />
+    <Compile Include="Repository\DistritoRepository.cs" />
+    <Compile Include="Repository\EquipoCelularRepository.cs" />
+    <Compile Include="Repository\EstadoEvaluacionRepository.cs" />
+    <Compile Include="Repository\EvaluacionRepository.cs" />
+    <Compile Include="Repository\LineaTelefonicaRepository.cs" />
+    <Compile Include="Repository\PlanRepository.cs" />
+    <Compile Include="Repository\ProvinciaRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\TipoEvaluacionRepository.cs" />
+    <Compile Include="Repository\TipoLineaRepository.cs" />
+    <Compile Include="Repository\TipoPagoRepository.cs" />
+    <Compile Include="Repository\TipoPlanRepository.cs" />
+    <Compile Include="Repository\TipoTrabajadorRepository.cs" />
+    <Compile Include="Repository\TrabajadorRepository.cs" />
+    <Compile Include="Repository\UbigeoRepository.cs" />
+    <Compile Include="Repository\UnityOfWork.cs" />
+    <Compile Include="Repository\VentaRepository.cs" />
     <Compile Include="_2015137254DbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

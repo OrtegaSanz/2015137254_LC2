@@ -1,4 +1,4 @@
-﻿using _2015137254_ENT;
+﻿using _2015137254_ENT.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;

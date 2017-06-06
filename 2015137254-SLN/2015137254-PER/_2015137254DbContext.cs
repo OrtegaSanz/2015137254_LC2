@@ -1,4 +1,4 @@
-﻿using _2015137254_ENT;
+﻿using _2015137254_ENT.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -33,5 +33,18 @@ namespace _2015137254_PER
         public DbSet<Ubigeo> Ubigeos { get; set; }
         public DbSet<Venta> Ventas { get; set; }
 
+        public _2015137254DbContext() : base("_2015137254")
+		{
+
+        }
+
+        /*
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new ());
+
+            base.OnModelCreating(modelBuilder);
+
+        }*/
     }
 }

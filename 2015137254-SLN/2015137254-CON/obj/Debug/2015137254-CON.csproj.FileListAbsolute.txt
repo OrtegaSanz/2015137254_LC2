@@ -4,3 +4,8 @@ c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-
 c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-CON\obj\Debug\2015137254-CON.csprojResolveAssemblyReference.cache
 c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-CON\obj\Debug\2015137254-CON.exe
 c:\users\carlos\documents\visual studio 2017\Projects\2015137254-SLN\2015137254-CON\obj\Debug\2015137254-CON.pdb
+C:\Users\Carlos\Desktop\2015137254_LC2\2015137254-SLN\2015137254-CON\bin\Debug\2015137254-CON.exe.config
+C:\Users\Carlos\Desktop\2015137254_LC2\2015137254-SLN\2015137254-CON\bin\Debug\2015137254-CON.exe
+C:\Users\Carlos\Desktop\2015137254_LC2\2015137254-SLN\2015137254-CON\bin\Debug\2015137254-CON.pdb
+C:\Users\Carlos\Desktop\2015137254_LC2\2015137254-SLN\2015137254-CON\obj\Debug\2015137254-CON.exe
+C:\Users\Carlos\Desktop\2015137254_LC2\2015137254-SLN\2015137254-CON\obj\Debug\2015137254-CON.pdb
