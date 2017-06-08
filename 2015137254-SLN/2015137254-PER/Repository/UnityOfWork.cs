@@ -10,6 +10,8 @@ namespace _2015137254_PER.Repository
     public class UnityOfWork : IUnityOfWork
     {
         private readonly _2015137254DbContext _Context;
+        private static UnityOfWork _Instance;
+        private static readonly object _Lock = new object();
 
         public IAdministradorEquipoRepository AdministradorEquipoes { get; private set; }
 
@@ -85,7 +87,20 @@ namespace _2015137254_PER.Repository
             Ubigeoes = new UbigeoRepository(_Context);
             Ventaes = new VentaRepository(_Context);
         }
-
+        public static UnityOfWork Instance
+        {
+            get
+            {
+                lock (_Lock)
+                {
+                    if(_Instance == null)
+                    {
+                        _Instance = new UnityOfWork();
+                    }
+                }
+                return _Instance;
+            }
+        }
         void IDisposable.Dispose()
         {
             _Context.Dispose();

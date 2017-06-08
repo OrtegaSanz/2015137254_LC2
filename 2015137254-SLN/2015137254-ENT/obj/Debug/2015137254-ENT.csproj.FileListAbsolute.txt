@@ -11,3 +11,8 @@ C:\Users\Carlos\Desktop\Nueva carpeta (2)\Git\2015137254_LC2\2015137254-SLN\2015
 C:\Users\Carlos\Desktop\Nueva carpeta (2)\Git\2015137254_LC2\2015137254-SLN\2015137254-ENT\obj\Debug\2015137254-ENT.csprojResolveAssemblyReference.cache
 C:\Users\Carlos\Desktop\Nueva carpeta (2)\Git\2015137254_LC2\2015137254-SLN\2015137254-ENT\obj\Debug\2015137254-ENT.dll
 C:\Users\Carlos\Desktop\Nueva carpeta (2)\Git\2015137254_LC2\2015137254-SLN\2015137254-ENT\obj\Debug\2015137254-ENT.pdb
+C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-ENT\bin\Debug\2015137254-ENT.dll
+C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-ENT\bin\Debug\2015137254-ENT.pdb
+C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-ENT\obj\Debug\2015137254-ENT.csprojResolveAssemblyReference.cache
+C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-ENT\obj\Debug\2015137254-ENT.dll
+C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-ENT\obj\Debug\2015137254-ENT.pdb
