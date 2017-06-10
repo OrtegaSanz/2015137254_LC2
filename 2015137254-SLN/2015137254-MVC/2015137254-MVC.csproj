@@ -147,6 +147,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EquipoCelularesController.cs" />
+    <Compile Include="Controllers\DistritoesController.cs" />
+    <Compile Include="Controllers\DireccionesController.cs" />
+    <Compile Include="Controllers\DepartamentoesController.cs" />
+    <Compile Include="Controllers\ContratoesController.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\CentroAtencionesController.cs" />
     <Compile Include="Controllers\AdministradorLineaesController.cs" />
     <Compile Include="Controllers\AdministradorEquipoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
