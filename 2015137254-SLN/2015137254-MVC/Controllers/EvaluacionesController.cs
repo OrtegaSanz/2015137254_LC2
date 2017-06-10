@@ -12,7 +12,7 @@ using _2015137254_PER.Repository;
 
 namespace _2015137254_MVC.Controllers
 {
-    public class EstadoEvaluacionesController : Controller
+    public class EvaluacionesController : Controller
     {
         //private _2015137254DbContext db = new _2015137254DbContext();
         private UnityOfWork unityOfWork = UnityOfWork.Instance;
@@ -20,7 +20,7 @@ namespace _2015137254_MVC.Controllers
         public ActionResult Index()
         {
             //return View(db.AdministradorEquipos.ToList());
-            return View(unityOfWork.EstadoEvaluaciones.GetAll());
+            return View(unityOfWork.Evaluaciones.GetAll());
         }
 
         // GET: AdministradorEquipoes/Details/5
@@ -31,12 +31,12 @@ namespace _2015137254_MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
-            EstadoEvaluacion EstadoEvaluaciones = unityOfWork.EstadoEvaluaciones.Get(id.Value);
-            if (EstadoEvaluaciones == null)
+            Evaluacion Evaluaciones = unityOfWork.Evaluaciones.Get(id.Value);
+            if (Evaluaciones == null)
             {
                 return HttpNotFound();
             }
-            return View(EstadoEvaluaciones);
+            return View(Evaluaciones);
         }
 
         // GET: AdministradorEquipoes/Create
@@ -50,17 +50,17 @@ namespace _2015137254_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EstadoEvaluacionId")] EstadoEvaluacion EstadoEvaluaciones)
+        public ActionResult Create([Bind(Include = "EvaluacionId")] Evaluacion Evaluaciones)
         {
             if (ModelState.IsValid)
             {
                 //db.AdministradorEquipos.Add(administradorEquipo);
-                unityOfWork.EstadoEvaluaciones.Add(EstadoEvaluaciones);
+                unityOfWork.Evaluaciones.Add(Evaluaciones);
                 unityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(EstadoEvaluaciones);
+            return View(Evaluaciones);
         }
 
         // GET: AdministradorEquipoes/Edit/5
@@ -70,12 +70,12 @@ namespace _2015137254_MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EstadoEvaluacion EstadoEvaluaciones = unityOfWork.EstadoEvaluaciones.Get(id.Value);
-            if (EstadoEvaluaciones == null)
+            Evaluacion Evaluaciones = unityOfWork.Evaluaciones.Get(id.Value);
+            if (Evaluaciones == null)
             {
                 return HttpNotFound();
             }
-            return View(EstadoEvaluaciones);
+            return View(Evaluaciones);
         }
 
         // POST: AdministradorEquipoes/Edit/5
@@ -83,17 +83,17 @@ namespace _2015137254_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EstadoEvaluacionId")] EstadoEvaluacion EstadoEvaluaciones)
+        public ActionResult Edit([Bind(Include = "EvaluacionId")] Evaluacion Evaluaciones)
         {
             if (ModelState.IsValid)
             {
                 //db.Entry(administradorEquipo).State = EntityState.Modified;
-                unityOfWork.StateModified(EstadoEvaluaciones);
+                unityOfWork.StateModified(Evaluaciones);
                 //db.SaveChanges();
                 unityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(EstadoEvaluaciones);
+            return View(Evaluaciones);
         }
 
         // GET: AdministradorEquipoes/Delete/5
@@ -104,12 +104,12 @@ namespace _2015137254_MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
-            EstadoEvaluacion EstadoEvaluaciones = unityOfWork.EstadoEvaluaciones.Get(id.Value);
-            if (EstadoEvaluaciones == null)
+            Evaluacion Evaluaciones = unityOfWork.Evaluaciones.Get(id.Value);
+            if (Evaluaciones == null)
             {
                 return HttpNotFound();
             }
-            return View(EstadoEvaluaciones);
+            return View(Evaluaciones);
         }
 
         // POST: AdministradorEquipoes/Delete/5
@@ -118,8 +118,8 @@ namespace _2015137254_MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
-            EstadoEvaluacion EstadoEvaluaciones = unityOfWork.EstadoEvaluaciones.Get(id);
-            unityOfWork.EstadoEvaluaciones.Delete(EstadoEvaluaciones);
+            Evaluacion Evaluaciones = unityOfWork.Evaluaciones.Get(id);
+            unityOfWork.Evaluaciones.Delete(Evaluaciones);
             //db.SaveChanges();
             unityOfWork.SaveChanges();
             return RedirectToAction("Index");

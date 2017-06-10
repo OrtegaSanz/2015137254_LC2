@@ -50,7 +50,7 @@ namespace _2015137254_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DireccioneId")] Direccion Direcciones)
+        public ActionResult Create([Bind(Include = "DireccionId")] Direccion Direcciones)
         {
             if (ModelState.IsValid)
             {
