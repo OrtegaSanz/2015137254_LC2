@@ -147,6 +147,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\TrabajadoresController.cs" />
+    <Compile Include="Controllers\TipoTrabajadoresController.cs" />
+    <Compile Include="Controllers\TipoPlanesController.cs" />
+    <Compile Include="Controllers\TipoPagoesController.cs" />
+    <Compile Include="Controllers\TipoLineaesController.cs" />
+    <Compile Include="Controllers\TipoEvaluacionesController.cs" />
+    <Compile Include="Controllers\ProvinciaesController.cs" />
+    <Compile Include="Controllers\PlanesController.cs" />
+    <Compile Include="Controllers\LineaTelefonicaesController.cs" />
     <Compile Include="Controllers\EvaluacionesController.cs" />
     <Compile Include="Controllers\EstadoEvaluacionesController.cs" />
     <Compile Include="Controllers\EquipoCelularesController.cs" />
