@@ -147,6 +147,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\VentaesController.cs" />
+    <Compile Include="Controllers\UbigeoesController.cs" />
     <Compile Include="Controllers\TrabajadoresController.cs" />
     <Compile Include="Controllers\TipoTrabajadoresController.cs" />
     <Compile Include="Controllers\TipoPlanesController.cs" />

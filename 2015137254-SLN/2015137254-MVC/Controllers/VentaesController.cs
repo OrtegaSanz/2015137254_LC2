@@ -12,7 +12,7 @@ using _2015137254_PER.Repository;
 
 namespace _2015137254_MVC.Controllers
 {
-    public class TipoPlanesController : Controller
+    public class VentaesController : Controller
     {
         //private _2015137254DbContext db = new _2015137254DbContext();
         private UnityOfWork unityOfWork = UnityOfWork.Instance;
@@ -20,7 +20,7 @@ namespace _2015137254_MVC.Controllers
         public ActionResult Index()
         {
             //return View(db.AdministradorEquipos.ToList());
-            return View(unityOfWork.TipoPlanes.GetAll());
+            return View(unityOfWork.Ventaes.GetAll());
         }
 
         // GET: AdministradorEquipoes/Details/5
@@ -31,12 +31,12 @@ namespace _2015137254_MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
-            TipoPlan TipoPlanes = unityOfWork.TipoPlanes.Get(id.Value);
-            if (TipoPlanes == null)
+            Venta Ventas = unityOfWork.Ventaes.Get(id.Value);
+            if (Ventas == null)
             {
                 return HttpNotFound();
             }
-            return View(TipoPlanes);
+            return View(Ventas);
         }
 
         // GET: AdministradorEquipoes/Create
@@ -50,17 +50,17 @@ namespace _2015137254_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TipoPlanId")] TipoPlan TipoPlanes)
+        public ActionResult Create([Bind(Include = "VentaId")] Venta Ventas)
         {
             if (ModelState.IsValid)
             {
                 //db.AdministradorEquipos.Add(administradorEquipo);
-                unityOfWork.TipoPlanes.Add(TipoPlanes);
+                unityOfWork.Ventaes.Add(Ventas);
                 unityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(TipoPlanes);
+            return View(Ventas);
         }
 
         // GET: AdministradorEquipoes/Edit/5
@@ -70,12 +70,12 @@ namespace _2015137254_MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoPlan TipoPlanes = unityOfWork.TipoPlanes.Get(id.Value);
-            if (TipoPlanes == null)
+            Venta Ventas = unityOfWork.Ventaes.Get(id.Value);
+            if (Ventas == null)
             {
                 return HttpNotFound();
             }
-            return View(TipoPlanes);
+            return View(Ventas);
         }
 
         // POST: AdministradorEquipoes/Edit/5
@@ -83,17 +83,17 @@ namespace _2015137254_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TipoPlanId")] TipoPlan TipoPlanes)
+        public ActionResult Edit([Bind(Include = "VentaId")] Venta Ventas)
         {
             if (ModelState.IsValid)
             {
                 //db.Entry(administradorEquipo).State = EntityState.Modified;
-                unityOfWork.StateModified(TipoPlanes);
+                unityOfWork.StateModified(Ventas);
                 //db.SaveChanges();
                 unityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(TipoPlanes);
+            return View(Ventas);
         }
 
         // GET: AdministradorEquipoes/Delete/5
@@ -104,12 +104,12 @@ namespace _2015137254_MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
-            TipoPlan TipoPlanes = unityOfWork.TipoPlanes.Get(id.Value);
-            if (TipoPlanes == null)
+            Venta Ventas = unityOfWork.Ventaes.Get(id.Value);
+            if (Ventas == null)
             {
                 return HttpNotFound();
             }
-            return View(TipoPlanes);
+            return View(Ventas);
         }
 
         // POST: AdministradorEquipoes/Delete/5
@@ -118,8 +118,8 @@ namespace _2015137254_MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
-            TipoPlan TipoPlanes = unityOfWork.TipoPlanes.Get(id);
-            unityOfWork.TipoPlanes.Delete(TipoPlanes);
+            Venta Ventas = unityOfWork.Ventaes.Get(id);
+            unityOfWork.Ventaes.Delete(Ventas);
             //db.SaveChanges();
             unityOfWork.SaveChanges();
             return RedirectToAction("Index");
