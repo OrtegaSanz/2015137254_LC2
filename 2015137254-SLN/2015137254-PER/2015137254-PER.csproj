@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201705130627262_InitialModel.Designer.cs">
       <DependentUpon>201705130627262_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706102033573_Modelo2.cs" />
+    <Compile Include="Migrations\201706102033573_Modelo2.Designer.cs">
+      <DependentUpon>201706102033573_Modelo2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\AdministradorEquipoRepository.cs" />
     <Compile Include="Repository\AdministradorLineaRepository.cs" />
@@ -116,6 +120,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705130627262_InitialModel.resx">
       <DependentUpon>201705130627262_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706102033573_Modelo2.resx">
+      <DependentUpon>201706102033573_Modelo2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

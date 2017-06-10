@@ -9,6 +9,7 @@ namespace _2015137254_ENT.Entities
     public class AdministradorEquipo
     {
         public int AdministradorEquipoId { get; set; }
+        public string Descripcion { get; set; }
         private EquipoCelular _EquipoCelular;
         public AdministradorEquipo()
         {

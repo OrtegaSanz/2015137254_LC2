@@ -21,3 +21,4 @@ C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-CON\bi
 C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-CON\obj\Debug\2015137254-CON.csprojResolveAssemblyReference.cache
 C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-CON\obj\Debug\2015137254-CON.exe
 C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-CON\obj\Debug\2015137254-CON.pdb
+C:\Users\Carlos\Desktop\2015137254_LC2\2015137254-SLN\2015137254-CON\obj\Debug\2015137254-CON.csprojResolveAssemblyReference.cache

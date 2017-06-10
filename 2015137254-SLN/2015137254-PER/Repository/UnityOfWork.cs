@@ -101,12 +101,12 @@ namespace _2015137254_PER.Repository
                 return _Instance;
             }
         }
-        void IDisposable.Dispose()
+        public void Dispose()
         {
             _Context.Dispose();
         }
 
-        int IUnityOfWork.SaveChanges()
+        public int SaveChanges()
         {
             return _Context.SaveChanges();
         }

@@ -8,17 +8,19 @@ using System.Web;
 using System.Web.Mvc;
 using _2015137254_ENT.Entities;
 using _2015137254_PER;
+using _2015137254_PER.Repository;
 
 namespace _2015137254_MVC.Controllers
 {
     public class AdministradorEquipoesController : Controller
     {
-        private _2015137254DbContext db = new _2015137254DbContext();
-
+        //private _2015137254DbContext db = new _2015137254DbContext();
+        private UnityOfWork unityOfWork = UnityOfWork.Instance;
         // GET: AdministradorEquipoes
         public ActionResult Index()
         {
-            return View(db.AdministradorEquipos.ToList());
+            //return View(db.AdministradorEquipos.ToList());
+            return View(unityOfWork.AdministradorEquipoes.GetAll());
         }
 
         // GET: AdministradorEquipoes/Details/5
@@ -28,12 +30,13 @@ namespace _2015137254_MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
-            if (administradorEquipo == null)
+            //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
+            AdministradorEquipo AdministradorEquipos = unityOfWork.AdministradorEquipoes.Get(id.Value);
+            if (AdministradorEquipos == null)
             {
                 return HttpNotFound();
             }
-            return View(administradorEquipo);
+            return View(AdministradorEquipos);
         }
 
         // GET: AdministradorEquipoes/Create
@@ -51,8 +54,9 @@ namespace _2015137254_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.AdministradorEquipos.Add(administradorEquipo);
-                db.SaveChanges();
+                //db.AdministradorEquipos.Add(administradorEquipo);
+                unityOfWork.AdministradorEquipoes.Add(administradorEquipo);
+                unityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +70,7 @@ namespace _2015137254_MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
+            AdministradorEquipo administradorEquipo = unityOfWork.AdministradorEquipoes.Get(id.Value);
             if (administradorEquipo == null)
             {
                 return HttpNotFound();
@@ -83,8 +87,10 @@ namespace _2015137254_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(administradorEquipo).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(administradorEquipo).State = EntityState.Modified;
+                unityOfWork.StateModified(administradorEquipo);
+                //db.SaveChanges();
+                unityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(administradorEquipo);
@@ -97,7 +103,8 @@ namespace _2015137254_MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
+            //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
+            AdministradorEquipo administradorEquipo = unityOfWork.AdministradorEquipoes.Get(id.Value);
             if (administradorEquipo == null)
             {
                 return HttpNotFound();
@@ -110,9 +117,11 @@ namespace _2015137254_MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
-            db.AdministradorEquipos.Remove(administradorEquipo);
-            db.SaveChanges();
+            //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
+            AdministradorEquipo administradorEquipo = unityOfWork.AdministradorEquipoes.Get(id);
+            unityOfWork.AdministradorEquipoes.Delete(administradorEquipo);
+            //db.SaveChanges();
+            unityOfWork.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -120,7 +129,7 @@ namespace _2015137254_MVC.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                unityOfWork.Dispose();
             }
             base.Dispose(disposing);
         }
