@@ -8,111 +8,120 @@ using System.Web;
 using System.Web.Mvc;
 using _2015137254_ENT.Entities;
 using _2015137254_PER;
+using _2015137254_PER.Repository;
 
 namespace _2015137254_MVC.Controllers
 {
-    public class Ventaes1Controller : Controller
+    public class VentaesController : Controller
     {
-        private _2015137254DbContext db = new _2015137254DbContext();
-
-        // GET: Ventaes1
+        //private _2015137254DbContext db = new _2015137254DbContext();
+        private UnityOfWork unityOfWork = UnityOfWork.Instance;
+        // GET: AdministradorEquipoes
         public ActionResult Index()
         {
-            return View(db.Ventas.ToList());
+            //return View(db.AdministradorEquipos.ToList());
+            return View(unityOfWork.Ventaes.GetAll());
         }
 
-        // GET: Ventaes1/Details/5
+        // GET: AdministradorEquipoes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Venta venta = db.Ventas.Find(id);
-            if (venta == null)
+            //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
+            Venta Ventas = unityOfWork.Ventaes.Get(id.Value);
+            if (Ventas == null)
             {
                 return HttpNotFound();
             }
-            return View(venta);
+            return View(Ventas);
         }
 
-        // GET: Ventaes1/Create
+        // GET: AdministradorEquipoes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Ventaes1/Create
+        // POST: AdministradorEquipoes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VentaId")] Venta venta)
+        public ActionResult Create([Bind(Include = "VentaId")] Venta Ventas)
         {
             if (ModelState.IsValid)
             {
-                db.Ventas.Add(venta);
-                db.SaveChanges();
+                //db.AdministradorEquipos.Add(administradorEquipo);
+                unityOfWork.Ventaes.Add(Ventas);
+                unityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(venta);
+            return View(Ventas);
         }
 
-        // GET: Ventaes1/Edit/5
+        // GET: AdministradorEquipoes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Venta venta = db.Ventas.Find(id);
-            if (venta == null)
+            Venta Ventas = unityOfWork.Ventaes.Get(id.Value);
+            if (Ventas == null)
             {
                 return HttpNotFound();
             }
-            return View(venta);
+            return View(Ventas);
         }
 
-        // POST: Ventaes1/Edit/5
+        // POST: AdministradorEquipoes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "VentaId")] Venta venta)
+        public ActionResult Edit([Bind(Include = "VentaId")] Venta Ventas)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(venta).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(administradorEquipo).State = EntityState.Modified;
+                unityOfWork.StateModified(Ventas);
+                //db.SaveChanges();
+                unityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(venta);
+            return View(Ventas);
         }
 
-        // GET: Ventaes1/Delete/5
+        // GET: AdministradorEquipoes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Venta venta = db.Ventas.Find(id);
-            if (venta == null)
+            //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
+            Venta Ventas = unityOfWork.Ventaes.Get(id.Value);
+            if (Ventas == null)
             {
                 return HttpNotFound();
             }
-            return View(venta);
+            return View(Ventas);
         }
 
-        // POST: Ventaes1/Delete/5
+        // POST: AdministradorEquipoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Venta venta = db.Ventas.Find(id);
-            db.Ventas.Remove(venta);
-            db.SaveChanges();
+            //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
+            Venta Ventas = unityOfWork.Ventaes.Get(id);
+            unityOfWork.Ventaes.Delete(Ventas);
+            //db.SaveChanges();
+            unityOfWork.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -120,7 +129,7 @@ namespace _2015137254_MVC.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                unityOfWork.Dispose();
             }
             base.Dispose(disposing);
         }
