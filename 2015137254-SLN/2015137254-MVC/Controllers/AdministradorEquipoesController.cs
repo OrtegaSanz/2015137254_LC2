@@ -9,18 +9,31 @@ using System.Web.Mvc;
 using _2015137254_ENT.Entities;
 using _2015137254_PER;
 using _2015137254_PER.Repository;
+using _2015137254_ENT.IRepositories;
 
 namespace _2015137254_MVC.Controllers
 {
     public class AdministradorEquipoesController : Controller
     {
+        private readonly IUnityOfWork _UnityOfWork;
+
+        public AdministradorEquipoesController(IUnityOfWork unityOfWork)
+        {
+            _UnityOfWork = unityOfWork;
+        }
+
+        public AdministradorEquipoesController()
+        {
+
+        }
+
         //private _2015137254DbContext db = new _2015137254DbContext();
-        private UnityOfWork unityOfWork = UnityOfWork.Instance;
+        //private UnityOfWork unityOfWork = UnityOfWork.Instance;
         // GET: AdministradorEquipoes
         public ActionResult Index()
         {
             //return View(db.AdministradorEquipos.ToList());
-            return View(unityOfWork.AdministradorEquipoes.GetAll());
+            return View(_UnityOfWork.AdministradorEquipoes.GetAll());
         }
 
         // GET: AdministradorEquipoes/Details/5
@@ -31,7 +44,7 @@ namespace _2015137254_MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
-            AdministradorEquipo AdministradorEquipos = unityOfWork.AdministradorEquipoes.Get(id.Value);
+            AdministradorEquipo AdministradorEquipos = _UnityOfWork.AdministradorEquipoes.Get(id.Value);
             if (AdministradorEquipos == null)
             {
                 return HttpNotFound();
@@ -50,13 +63,13 @@ namespace _2015137254_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AdministradorEquipoId")] AdministradorEquipo administradorEquipo)
+        public ActionResult Create([Bind(Include = "AdministradorEquipoId,Descripcion")] AdministradorEquipo administradorEquipo)
         {
             if (ModelState.IsValid)
             {
                 //db.AdministradorEquipos.Add(administradorEquipo);
-                unityOfWork.AdministradorEquipoes.Add(administradorEquipo);
-                unityOfWork.SaveChanges();
+                _UnityOfWork.AdministradorEquipoes.Add(administradorEquipo);
+                _UnityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -70,7 +83,7 @@ namespace _2015137254_MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdministradorEquipo administradorEquipo = unityOfWork.AdministradorEquipoes.Get(id.Value);
+            AdministradorEquipo administradorEquipo = _UnityOfWork.AdministradorEquipoes.Get(id.Value);
             if (administradorEquipo == null)
             {
                 return HttpNotFound();
@@ -83,14 +96,14 @@ namespace _2015137254_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AdministradorEquipoId")] AdministradorEquipo administradorEquipo)
+        public ActionResult Edit([Bind(Include = "AdministradorEquipoId,Descripcion")] AdministradorEquipo administradorEquipo)
         {
             if (ModelState.IsValid)
             {
                 //db.Entry(administradorEquipo).State = EntityState.Modified;
-                unityOfWork.StateModified(administradorEquipo);
+                _UnityOfWork.StateModified(administradorEquipo);
                 //db.SaveChanges();
-                unityOfWork.SaveChanges();
+                _UnityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(administradorEquipo);
@@ -104,7 +117,7 @@ namespace _2015137254_MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
-            AdministradorEquipo administradorEquipo = unityOfWork.AdministradorEquipoes.Get(id.Value);
+            AdministradorEquipo administradorEquipo = _UnityOfWork.AdministradorEquipoes.Get(id.Value);
             if (administradorEquipo == null)
             {
                 return HttpNotFound();
@@ -118,10 +131,10 @@ namespace _2015137254_MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             //AdministradorEquipo administradorEquipo = db.AdministradorEquipos.Find(id);
-            AdministradorEquipo administradorEquipo = unityOfWork.AdministradorEquipoes.Get(id);
-            unityOfWork.AdministradorEquipoes.Delete(administradorEquipo);
+            AdministradorEquipo administradorEquipo = _UnityOfWork.AdministradorEquipoes.Get(id);
+            _UnityOfWork.AdministradorEquipoes.Delete(administradorEquipo);
             //db.SaveChanges();
-            unityOfWork.SaveChanges();
+            _UnityOfWork.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -129,7 +142,7 @@ namespace _2015137254_MVC.Controllers
         {
             if (disposing)
             {
-                unityOfWork.Dispose();
+                _UnityOfWork.Dispose();
             }
             base.Dispose(disposing);
         }

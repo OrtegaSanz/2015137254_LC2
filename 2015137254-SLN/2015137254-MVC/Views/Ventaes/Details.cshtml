@@ -1,0 +1,19 @@
+﻿@model _2015137254_ENT.Entities.Venta
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Venta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VentaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -16,4 +16,3 @@ C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-ENT\bi
 C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-ENT\obj\Debug\2015137254-ENT.csprojResolveAssemblyReference.cache
 C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-ENT\obj\Debug\2015137254-ENT.dll
 C:\Users\Carlos\Desktop\Avance 2\2015137254_LC2\2015137254-SLN\2015137254-ENT\obj\Debug\2015137254-ENT.pdb
-C:\Users\Carlos\Desktop\2015137254_LC2\2015137254-SLN\2015137254-ENT\obj\Debug\2015137254-ENT.csprojResolveAssemblyReference.cache
