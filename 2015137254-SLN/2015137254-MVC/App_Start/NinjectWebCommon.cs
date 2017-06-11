@@ -10,6 +10,9 @@ namespace _2015137254_MVC.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using _2015137254_PER.Repository;
+    using _2015137254_ENT.IRepositories;
+    using _2015137254_PER;
 
     public static class NinjectWebCommon 
     {
@@ -61,6 +64,56 @@ namespace _2015137254_MVC.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IUnityOfWork>().To<UnityOfWork>();
+
+            kernel.Bind<_2015137254DbContext>().To<_2015137254DbContext>();
+
+            kernel.Bind<IAdministradorEquipoRepository>().To<AdministradorEquipoRepository>();
+
+            kernel.Bind<IAdministradorLineaRepository>().To<AdministradorLineaRepository>();
+
+            kernel.Bind<ICentroAtencionRepository>().To<CentroAtencionRepository>();
+
+            kernel.Bind<IClienteRepository>().To<ClienteRepository>();
+
+            kernel.Bind<IContratoRepository>().To<ContratoRepository>();
+
+            kernel.Bind<IDepartamentoRepository>().To<DepartamentoRepository>();
+
+            kernel.Bind<IDireccionRepository>().To<DireccionRepository>();
+
+            kernel.Bind<IDistritoRepository>().To<DistritoRepository>();
+
+            kernel.Bind<IEquipoCelularRepository>().To<EquipoCelularRepository>();
+
+            kernel.Bind<IEstadoEvaluacionRepository>().To<EstadoEvaluacionRepository>();
+
+            kernel.Bind<IEvaluacionRepository>().To<EvaluacionRepository>();
+
+            kernel.Bind<ILineaTelefonicaRepository>().To<LineaTelefonicaRepository>();
+
+            kernel.Bind<IPlanRepository>().To<PlanRepository>();
+
+            kernel.Bind<IProvinciaRepository>().To<IProvinciaRepository>();
+
+            kernel.Bind<ITipoEvaluacionRepository>().To<TipoEvaluacionRepository>();
+
+            kernel.Bind<ITipoLineaRepository>().To<TipoLineaRepository>();
+
+            kernel.Bind<ITipoLineaRepository>().To<TipoLineaRepository>();
+
+            kernel.Bind<ITipoPagoRepository>().To<TipoPagoRepository>();
+
+            kernel.Bind<ITipoPlanRepository>().To<TipoPlanRepository>();
+
+            kernel.Bind<ITipoTrabajadorRepository>().To<TipoTrabajadorRepository>();
+
+            kernel.Bind<ITrabajadorRepository>().To<TrabajadorRepository>();
+
+            kernel.Bind<IUbigeoRepository>().To<UbigeoRepository>();
+
+            kernel.Bind<IVentaRepository>().To<VentaRepository>();
+
         }        
     }
 }
