@@ -9,13 +9,24 @@ using System.Web.Mvc;
 using _2015137254_ENT.Entities;
 using _2015137254_PER;
 using _2015137254_PER.Repository;
+using _2015137254_ENT.IRepositories;
 
 namespace _2015137254_MVC.Controllers
 {
     public class VentaesController : Controller
     {
+        private readonly IUnityOfWork unityOfWork;
+        public VentaesController(IUnityOfWork UnityOfWork)
+        {
+            unityOfWork = UnityOfWork;
+        }
+
+        public VentaesController()
+        {
+
+        }
         //private _2015137254DbContext db = new _2015137254DbContext();
-        private UnityOfWork unityOfWork = UnityOfWork.Instance;
+        //private UnityOfWork unityOfWork = UnityOfWork.Instance;
         // GET: AdministradorEquipoes
         public ActionResult Index()
         {
